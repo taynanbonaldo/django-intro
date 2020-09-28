@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block conteudo %}
+<h1>{{ titulo }}</h1>
+	{% for premio in premios %}
+	<article class="premio">
+		<h2 class="titulo">
+			<a href="{{ premio.sigla }}">
+				{{ premio.nome }}
+			</a>
+		</h2>
+		<p class="descricao" id="premio1">
+			{{ premio.descricao }}
+		</p>
+	</article>
+	{% endfor %}
+{% endblock %}
