@@ -1,0 +1,30 @@
+{% extends "base.html" %} 
+{% load static %} 
+{% block scripts %}
+<link rel="stylesheet" href="{% static 'css/cursos.css' %}" /> 
+{% endblock %} 
+
+{% block conteudo %}
+<h1>{{ premio.nome }}</h1>
+<section class="sobre">
+	<h2>Sobre o Premio</h2>
+	<p>
+		{{ premio.descricao }}
+	</p>
+</section>
+<section class="informacoes">
+	<h2>Informações Adicionais</h2>
+
+	<h3>Período</h3>
+	<ul>
+		{% for per in premio.periodo %}
+			<li>{{ per }}</li>
+		{% endfor %}
+	</ul>
+
+	<h3>Duração</h3>
+	<p>{{ premio.duracao }}</p>
+
+	<a href="disciplinas">Grade Curricular</a>
+</section>
+{% endblock %}
